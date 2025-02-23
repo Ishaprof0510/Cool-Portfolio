@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Objects</title>
+</head>
+<body>
+
+<script>
+    /*
+const product = {
+    name:'socks',
+    price: 1000
+};
+
+console.log(typeof product);
+console.log(product.name);
+console.log(product.price);
+
+// changing value of a property
+product.name = 'cotton socks';
+
+console.log(product.name);
+
+// adding new property
+product.newProperty = true;
+
+console.log(product);
+
+//delete a property
+
+delete product.newProperty;
+console.log(product);
+
+
+const product2 ={
+    name: 'shirt',
+    'delivery-time': '1 day',
+    rating:{
+        stars: 4.5,
+        count: 87
+    },
+    fun: function function1() {
+      console.log('function inside object');
+    }
+};
+
+console.log(product2);
+console.log(product2.name);
+console.log(product2['name']);
+//console.log(product2.delivery-time); //dot notation does not work with "-", so in that case we need to use [] brackets.
+console.log(product2['delivery-time']);
+console.log(product2.rating.stars);
+product2.fun();
+
+//convert JS object to JSON (JSON.stringify)
+console.log(JSON.stringify(product2));
+
+//convert JSON ---> JS Object (JSON.parse)
+const jsonString = JSON.stringify(product2);
+console.log(JSON.parse(jsonString));
+
+
+console.log('hello'.length);
+console.log('hello'.toUpperCase());
+
+const object1 = {
+    message: 'hello'
+};
+
+const object2 = object1;
+
+object1.message = "Good Job!";
+console.log(object1.message);
+console.log(object2.message);
+
+
+const object3 = {
+    message: "Good Job!"
+}
+
+console.log(object3 === object1);
+console.log(object2 === object1);
+
+
+const object4 = {
+    message: "Good Job!",
+    price: 799
+}
+
+
+// const message = object4.message; Below line is same as this line. 
+
+//Destructuring shortcut - easier way to take properties out of an object. Property name and variable name should be same.
+
+const { message, price } = object4; // We are saving message and price property in a variable called message and price.
+
+console.log(message);
+console.log(price);
+
+
+const object5 = {
+    // message: message
+    message,  // shorthand property & shortcut for above line
+
+   // method: function function1(){
+    //    console.log('method');
+   // }
+
+    // shorthand method for above code..line 108-110
+    method() {
+        console.log('method');
+    }
+};
+
+console.log(object5);
+object5.method();
+
+*/
+
+// 8a. 
+
+const product = {
+    name: 'basketball',
+    price: 2095 
+}
+
+console.log(product);
+
+//8b.
+product.price += 500;
+console.log(product.price);
+
+//8c.
+product['delivery-time'] = '3 days';
+console.log(product);
+
+//8d. 
+const product1 = {
+    name: 'T-shirt',
+    price: 200
+};
+
+const product2 = {
+    name: 'Pant',
+    price: 400
+};
+
+
+function comparePrice(product1, product2) {
+   if (product1.price < product2.price) {
+       return product1;
+   } else {
+       return product2;
+   }
+}
+
+console.log(comparePrice(product1, product2));
+
+//8e.
+
+function isSameProduct(product3,product4){
+if (product3.name === product4.name && product3.price === product4.price) {
+    return true;
+} else {
+    return false;
+}
+}
+
+const product3 = {
+    name: 'Humidifier',
+    price: 200
+};
+
+const product4 = {
+    name: 'Toaster',
+    price: 150
+};
+
+console.log(isSameProduct(product3,product4));
+
+//8f. 
+
+const myString = "Hello World";
+const lowercaseString = myString.toLowerCase();
+
+console.log(lowercaseString); 
+
+//8g.
+
+const str = "Hello";
+const repeatedStr = str.repeat(3); // Repeat the string 3 times
+
+console.log(repeatedStr); 
+
+
+//8h.
+ 05-calculator
+
+ //8i
+
+
+
+
+
+</script>
+
+</body>
+</html>
+

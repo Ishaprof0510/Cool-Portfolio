@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Projects</title>
+  <style>
+
+body{
+      font-family: Arial;
+    }
+
+
+    .styleSubscribe {
+      border: none;
+      background-color: black;
+      color: white;
+      padding: 10px;
+      font-weight: bold;
+      border-radius: 50px;
+      cursor: pointer;
+      margin-bottom: 30px;
+    }
+
+    .is-subscribed {
+      background-color: rgb(238, 232, 232);
+      color: black;
+    }
+
+    .cost-input{
+      font-size: 15px;
+      padding: 10px;
+    }
+    
+    .calculate-button{
+      background-color: rgb(26, 163, 26);
+      color: white;
+      border: none;
+      font-size: 15px;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+
+
+  </style>
+</head>
+<body>
+
+<p>YouTube Subscribe Button</p>
+<button onclick="subscribe()" class="subscribe styleSubscribe">Subscribe
+</button>
+
+<p>Amazon Shipping Calculator</p>
+<input placeholder="Cost of order" class="js-cost-input cost-input" onkeydown="handleCostKeydown(event)">
+
+<button onclick="
+calculateTotal();" class='calculate-button'
+>Calculate</button>
+<p class="js-total-cost"></p>
+
+
+<button class="nineA">9a</button>
+<button class="nineB">9b</button>
+
+<button onclick="heads()">Heads</button>
+<button onclick="tails()">Tails</button>
+
+<p class="p"></p>
+
+
+<input class="input" placeholder="Name" onkeydown="onkeydown1()">
+
+<button onclick="submit()">Submit</button>
+
+<p class="text"></p>
+
+<!--//9h. -->
+<input placeholder="Type Something"  class = 'input1'  onkeyup="
+const inputValue  = document.querySelector('.input1');
+     document.querySelector('.key').innerHTML = inputValue.value;
+"></input>  
+
+<p class="key"></p>
+
+
+<!-- 9i -->
+
+<button onclick="
+       displayCartQuanity();
+    ">Show Quantity</button>
+
+    <button onclick="
+      if (cartQuantity + 1 > 10) {
+        alert('The cart is full');
+      } else {
+        cartQuantity++;
+        console.log(`Cart quantity: ${cartQuantity}`);
+      }
+    ">Add to Cart</button>
+
+    <button onclick="updateCartQuantity (2)">+2</button>
+
+    <button onclick="updateCartQuantity (3)">+3</button>
+
+    <button onclick="updateCartQuantity (4)">+4</button>
+
+    <button onclick="updateCartQuantity (5)">+5</button>
+
+    <button onclick="updateCartQuantity (-1)">Remove from cart</button>
+
+    <button onclick="updateCartQuantity (-2)">-2</button>
+
+    <button onclick=" updateCartQuantity (-3)">-3</button>
+   
+
+    <button onclick="
+      cartQuantity = 0;
+      console.log('Cart was reset.');
+      displayCartQuanity();
+       ">Reset Cart</button>
+
+
+<p class="page"></p> <!--9i-->
+
+<script>
+
+//9i.
+
+let cartQuantity = 0;
+
+        displayCartQuanity();       
+
+      function updateCartQuantity (change){
+
+        if (cartQuantity + change > 10) {
+        alert('The cart is full');
+        return;
+      } 
+        if (cartQuantity + change < 0) {
+        alert('Not enough items in the cart');
+        return;
+      } 
+      cartQuantity += change;
+      displayCartQuanity();
+      }
+
+    //9i.
+      function displayCartQuanity() {
+      document.querySelector('.page').innerHTML = `Cart Quanity: ${cartQuantity}`;
+      }
+
+// 9a.
+const nineA = document.querySelector('.nineA');
+console.log(nineA);
+
+//9b.
+document.querySelector('.nineB').innerHTML = "9b done!";
+
+
+//9c.
+
+function heads(){
+  document.querySelector('.p').innerHTML = 'You chose: Heads'
+}
+
+function tails(){
+  document.querySelector('.p').innerHTML = 'You chose: Tails'
+}
+
+//9d.
+
+function submit(){
+    const inputValue = document.querySelector('.input').value;
+    document.querySelector('.text').innerHTML = `You name is ${inputValue}`;
+}
+//9e. 9f.
+
+  function onkeydown1() {
+    if (event.key === 'Enter'){
+    submit();
+}
+}
+
+//9h. In HTML code
+
+
+String(25); // String() is a built in func that converts a number into string
+console.log('25' - 5); // Not recommended
+console.log('25' + 5); // Not recommended
+
+// JS automatically does this for us, so do not need to use 'window'.
+window.document
+window.console.log(window)
+window.alert
+
+function handleCostKeydown(event){
+if(event.key === 'Enter') {
+    calculateTotal();
+}
+}
+
+
+function calculateTotal(){
+const inputElement = document.querySelector('.js-cost-input');
+let cost = Number(inputElement.value)*100; //9g.
+
+console.log(cost);
+
+if (cost < 4000){
+    cost += 1000;
+    console.log(cost);
+} 
+
+
+document.querySelector('.js-total-cost').innerHTML = `$${cost/100}`;
+
+}
+
+
+function subscribe(){
+    const buttonElement = document.querySelector('.subscribe');
+
+if(buttonElement.innerText === 'Subscribe') {
+    buttonElement.innerHTML = 'SubscribeD'
+    buttonElement.classList.add('is-subscribed');
+} 
+else {
+   buttonElement.innerHTML = 'Subscribe';
+   buttonElement.classList.remove('is-subscribed');
+}
+}
+
+//10a.
+
+
+
+
+</script>
+</body>
+</html>
