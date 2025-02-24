@@ -4,7 +4,7 @@
 
 .products-grid {
   display: grid;
-
+ 
   /* - In CSS Grid, 1fr means a column will take up the
        remaining space in the grid.
      - If we write 1fr 1fr ... 1fr; 8 times, this will
@@ -153,4 +153,8 @@
   width: 100%;
   padding: 8px;
   border-radius: 50px;
+}
+
+.added-to-cart-visible {
+opacity: 1;
 }
