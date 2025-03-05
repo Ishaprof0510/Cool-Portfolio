@@ -1,3 +1,4 @@
+
 export const products = [
   {
     id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
@@ -41,7 +42,7 @@ export const products = [
       "tshirts",
       "apparel",
       "mens"
-    ], 
+    ],
     type: "clothing",
     sizeChartLink: "images/clothing-size-chart.png"
   },
@@ -655,32 +656,6 @@ export const products = [
       "hoodies",
       "apparel",
       "mens"
-    ]
-  }, {
-    id: "e43638ce-6aa0-4b85-b27f-e1d07eb898c9",
-    image: "images/products/backpack.jpg",
-    name: "Black Colored Backpack",
-    rating: {
-      stars: 4.5,
-      count: 107
-    },
-    priceCents: 2449,
-    keywords: [
-      "backpack",
-      "bag"
-    ]
-  } , {
-    id: "e43638ce-6aa0-4b78-b85f-e1d07eb898c9",
-    image: "images/products/umbrella.jpg",
-    name: "Black Umbrella",
-    rating: {
-      stars: 3.5,
-      count: 79
-    },
-    priceCents: 1090,
-    keywords: [
-      "umbrella",
-      "shelter"
     ]
   }
 ];
