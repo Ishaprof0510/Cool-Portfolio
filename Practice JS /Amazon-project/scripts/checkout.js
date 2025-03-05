@@ -1,5 +1,5 @@
 
-import {cart, removeFromCart, calculateCartQuantity, updateQuantity} from '../data/cart.js';
+import {cart, removeFromCart, calculateCartQuantity, updateQuantity, updateDeliveryOption} from '../data/cart.js';
 import {products} from '../data/products.js';
 import {formatCurrency} from './util/money.js';
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
@@ -102,7 +102,7 @@ function deliveryOptionsHTML(matchingProduct, cartItem) {
            'dddd, MMMM D'
        );
 
-       const priceString = deliveryOptions.priceCents 
+       const priceString = deliveryOption.priceCents 
        === 0 
        ? 'FREE'
        : `$${formatCurrency(deliveryOption.priceCents)} - `;
@@ -112,12 +112,14 @@ function deliveryOptionsHTML(matchingProduct, cartItem) {
 
        html +=
        ` 
-         <div class="delivery-option">
+         <div class="delivery-option js-delivery-option" 
+         data-product-id="${matchingProduct.id}"
+         data-product-id="${deliveryOption.idd}">
            <input type="radio" 
            ${isChecked 
             ? 'checked'
             : ''
-    }
+             }
              class="delivery-option-input"
              name="delivery-option-${matchingProduct.id}">
            <div>
@@ -125,12 +127,13 @@ function deliveryOptionsHTML(matchingProduct, cartItem) {
                ${dateString}
              </div>
              <div class="delivery-option-price">
-               $${priceString} - Shipping
+               ${priceString} Shipping
              </div>
            </div>
          </div>
          `
      });
+
      return html;
 }
 
@@ -219,3 +222,13 @@ updateCartQuantity();
 });
 });
 
+document.querySelectorAll('.js-delivery-option')
+.forEach( (element) => {
+element.addEventListener('click', () => {
+  const {productId, deliveryOptionId} = element.dataset;
+  // const productId = element.dataset.productId;
+  // const deliveryOptionId = element.dataset.deliveryOptionId;
+
+  updateDeliveryOption(productId, deliveryOptionId);
+})
+})
