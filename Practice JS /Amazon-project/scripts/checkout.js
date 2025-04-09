@@ -25,15 +25,15 @@ function renderOrderSummary() {
 
       let deliveryOption;
 
-      deliveryOptions.forEach((Option) => {
-      if (Option.id === deliveryOptionId) {
-      deliveryOption = Option;
+      deliveryOptions.forEach((option) => {
+      if (option.id === deliveryOptionId) {
+          deliveryOption = option;
       }
       });
 
       const today = dayjs();
           const deliveryDate = today.add(
-              deliveryOption.deliveryDays,
+            deliveryOption.deliveryDays,
               'days'
           );
           const dateString = deliveryDate.format(
@@ -90,14 +90,13 @@ function renderOrderSummary() {
         let html = '';
 
         deliveryOptions.forEach( (deliveryOption) => {
-          const today = dayjs();
+          const today = dayjs(); //To get today's date
           const deliveryDate = today.add(
               deliveryOption.deliveryDays,
               'days'
           );
           const dateString = deliveryDate.format(
-              'dddd, MMMM D'
-          );
+              'dddd, MMMM D' );
 
           const priceString = deliveryOption.priceCents 
           === 0 
@@ -111,7 +110,7 @@ function renderOrderSummary() {
           ` 
             <div class="delivery-option js-delivery-option" 
             data-product-id="${matchingProduct.id}"
-            data-product-id="${deliveryOption.idd}">
+            data-delivery-option-id="${deliveryOption.id}">
               <input type="radio" 
               ${isChecked 
                 ? 'checked'
@@ -150,7 +149,7 @@ function renderOrderSummary() {
           );
           container.remove();
 
-          updateCartQuantity(); //14C.
+          // updateCartQuantity(); //14C.
         });
         });
 

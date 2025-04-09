@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="siteStyle.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+<body> 
+
+
+<div class="wrapper">
+<form name="submit-to-google-sheet" action="">
+    <h1>Patient Information</h1>
+    <div class="input-box">
+ <label for="check-in" class="myInput">Check Me In</label>
+  
+ <br>
+ <br>
+ <label class="name" for="PatientName">Patient Name</label>
+ <input list="name" name="Patient Name" type="text" placeholder="Patient Name" required>
+
+ <label class="time" for="EstimatedTime">Estimated time of arrival</label>
+   <input type="time" list="name" name="Estimated Time" type="text" placeholder="Estimated time of arrival" required>
+   
+   <button type="submit" class="btn">Submit</button>
+   
+    </form>
+   <span id="msg"></span>
+
+</div>
+
+
+</div>
+
+
+
+
+    <script src="siteScript.js"></script>
+</body>
+</html>
